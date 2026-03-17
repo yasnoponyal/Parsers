@@ -26,7 +26,9 @@ HEADERS = {
     "Sec-Fetch-Site": "same-origin",
 }
 
-FIELDNAMES   = ["Название", "Размер", "Тесто", "Цена", "Вес (г)", "Калории (на 100г)", "Общий каллораж", "Белки", "Жиры", "Углеводы", "Состав"]
+
+FIELDNAMES   = ["Название", "Размер", "Тесто", "Цена", "Вес (г)", "Калории (100г)", "Белки", "Жиры", "Углеводы", "Состав", "Итого калорий"]
+
 SHEET_COLORS = {"Пиццы": "FFD700", "Другие блюда": "90EE90", "Напитки": "87CEEB", "Остальное": "DDA0DD"}
 
 def total_cal(weight, calories):
@@ -112,7 +114,8 @@ def get_rows(item):
 
 
 def style_sheet(ws, header_color):
-    col_widths  = [30, 12, 16, 8, 8, 12, 14, 8, 8, 10, 50]
+
+    col_widths  = [30, 12, 16, 8, 8, 12, 14, 8, 8, 50, 15]
     header_fill = PatternFill("solid", start_color=header_color)
     header_font = Font(name="Arial", bold=True, size=11)
 
